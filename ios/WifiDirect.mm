@@ -470,9 +470,9 @@ static NSString *const kServiceType = @"wifi-direct";
 {
   if (!_hasListeners) return;
 
-  __weak typeof(self) weakSelf = self;
+  __weak WifiDirect *weakSelf = self;
   dispatch_async(dispatch_get_main_queue(), ^{
-    __strong typeof(weakSelf) strongSelf = weakSelf;
+    WifiDirect *strongSelf = weakSelf;
     if (!strongSelf) return;
 
     RCTBridge *bridge = [RCTBridge currentBridge];
