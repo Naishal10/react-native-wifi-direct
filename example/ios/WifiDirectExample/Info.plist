@@ -50,5 +50,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>This app uses the local network to discover and communicate with nearby devices via WiFi Direct.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_wifi-direct._tcp</string>
+		<string>_wifi-direct._udp</string>
+	</array>
 </dict>
 </plist>

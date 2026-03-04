@@ -41,7 +41,13 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "wifi-direct",
+    "wifi-p2p",
+    "peer-to-peer",
+    "multipeer-connectivity",
+    "file-transfer",
+    "turbo-module"
   ],
   "repository": {
     "type": "git",
