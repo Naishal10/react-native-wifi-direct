@@ -9,11 +9,7 @@ import {
   type DataReceived,
 } from './types';
 
-export {
-  WifiDirectEvent,
-  DeviceStatus,
-  TransferStatus,
-} from './types';
+export { WifiDirectEvent, DeviceStatus, TransferStatus } from './types';
 
 export type {
   WifiDirectDevice,
@@ -71,28 +67,39 @@ const WifiDirect = {
     NativeWifiDirect.sendData(data, targetAddress, isBase64),
 
   // Event Subscriptions
-  onPeersUpdated: (
-    callback: (data: { devices: WifiDirectDevice[] }) => void
-  ) => eventEmitter.addListener(WifiDirectEvent.PEERS_UPDATED, callback),
+  onPeersUpdated: (callback: (data: { devices: WifiDirectDevice[] }) => void) =>
+    eventEmitter.addListener(
+      WifiDirectEvent.PEERS_UPDATED,
+      callback as (...args: any[]) => void
+    ),
 
   onConnectionInfoUpdated: (
     callback: (data: { connectionInfo: ConnectionInfo }) => void
   ) =>
     eventEmitter.addListener(
       WifiDirectEvent.CONNECTION_INFO_UPDATED,
-      callback
+      callback as (...args: any[]) => void
     ),
 
   onThisDeviceChanged: (
     callback: (data: { device: WifiDirectDevice }) => void
   ) =>
-    eventEmitter.addListener(WifiDirectEvent.THIS_DEVICE_CHANGED, callback),
+    eventEmitter.addListener(
+      WifiDirectEvent.THIS_DEVICE_CHANGED,
+      callback as (...args: any[]) => void
+    ),
 
   onFileTransferUpdate: (callback: (data: FileTransferUpdate) => void) =>
-    eventEmitter.addListener(WifiDirectEvent.FILE_TRANSFER_UPDATE, callback),
+    eventEmitter.addListener(
+      WifiDirectEvent.FILE_TRANSFER_UPDATE,
+      callback as (...args: any[]) => void
+    ),
 
   onDataReceived: (callback: (data: DataReceived) => void) =>
-    eventEmitter.addListener(WifiDirectEvent.DATA_RECEIVED, callback),
+    eventEmitter.addListener(
+      WifiDirectEvent.DATA_RECEIVED,
+      callback as (...args: any[]) => void
+    ),
 };
 
 export default WifiDirect;
