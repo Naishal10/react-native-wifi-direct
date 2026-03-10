@@ -17,9 +17,9 @@ WiFi Direct (P2P) for React Native. Supports peer discovery, connection, file tr
 ## Installation
 
 ```sh
-npm install react-native-wifi-direct
+npm i @np10/react-native-wifi-direct
 # or
-yarn add react-native-wifi-direct
+yarn add @np10/react-native-wifi-direct
 ```
 
 ### iOS
@@ -66,7 +66,7 @@ Add to your `Info.plist`:
 ## Usage
 
 ```typescript
-import WifiDirect, { DeviceStatus } from 'react-native-wifi-direct';
+import WifiDirect, { DeviceStatus } from '@np10/react-native-wifi-direct';
 
 // Initialize
 await WifiDirect.initialize();
